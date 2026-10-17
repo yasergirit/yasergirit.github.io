@@ -79,6 +79,22 @@ button:hover{background:#245166}button:disabled{opacity:.36;cursor:not-allowed}
 .hint{color:#8caab9;font-size:12px}
 @media(max-width:900px){.frame{aspect-ratio:auto;min-height:700px}.slide{padding:26px;position:absolute}.grid5{grid-template-columns:repeat(3,1fr)}.matcols{grid-template-columns:1fr}.matrix .itemrow{font-size:11px}.compare{gap:8px}.step{padding:10px}.foot{font-size:9px}}
 @media(max-width:550px){.frame{min-height:830px}.grid3,.grid2{grid-template-columns:1fr}.grid5{grid-template-columns:repeat(2,1fr)}.content{margin-top:14px}.slide{padding:23px}.step .item{font-size:10px}.flex{gap:6px}.arrow{font-size:12px}.compare{grid-template-columns:1fr}.compare .panel{min-height:0}.subtitle{font-size:13px}.matrix .itemrow{font-size:10px}.hint{display:none}}
+
+/* Slide 3: high-contrast architecture flow */
+.arch-flow{display:grid;grid-template-columns:minmax(0,1.2fr) 19px minmax(0,1.35fr) 19px minmax(0,1.55fr) 19px minmax(0,1.1fr) 19px minmax(0,1.16fr);gap:7px;align-items:stretch;margin-top:22px;flex:1;min-height:0}
+.arch-box{display:flex;flex-direction:column;min-width:0;gap:8px;padding:14px 11px;border:3px solid #507b99;border-radius:13px;background:#eef5fb;box-shadow:0 7px 16px #0b243425;color:#183447}
+.arch-box h3{font-size:clamp(12px,1.08vw,18px);line-height:1.24;margin:4px 0 8px;font-weight:850}
+.arch-label{font-weight:900;font-size:clamp(8px,.71vw,12px);letter-spacing:.075em;color:#366379}
+.arch-box.source{background:#eaf3ff;border-color:#3984d0}.arch-box.quality{background:#e8faf7;border-color:#19a596}.arch-box.warehouse{background:#edf1fa;border-color:#466fa7}.arch-box.mart{background:#fff6e3;border-color:#dca43b}.arch-box.dashboard{background:#eaf8f1;border-color:#35a275}
+.arch-piece{display:block;background:#fff;border:1.5px solid #b9cad6;border-radius:7px;padding:10px 7px;color:#244658;font-size:clamp(9px,.84vw,13px);line-height:1.25;font-weight:650;overflow-wrap:anywhere}
+.arch-piece small{display:block;margin:4px 0 0;font-size:clamp(8px,.72vw,11px);color:#627d8c;font-weight:500}
+.arch-arr{display:flex;align-items:center;justify-content:center;color:#0f918b;font-size:clamp(17px,1.8vw,27px);font-weight:900}
+.arch-vertical{font-size:clamp(9px,.74vw,12px);font-weight:750;color:#3b668a;text-align:center}
+.arch-model{display:grid;grid-template-columns:1fr 1fr;gap:6px}.arch-model .arch-piece{min-width:0;padding:9px 6px}
+.arch-decisions{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:14px 0 3px;font-size:clamp(10px,.91vw,14px);font-weight:650}
+.arch-decisions>div{padding:13px;border:2px solid;border-radius:9px}.arch-pass{background:#e5f8ed;color:#14704c;border-color:#71c8a4!important}.arch-block{background:#fff0f1;color:#aa3b49;border-color:#e7a1a8!important}
+@media(max-width:980px){.arch-flow{grid-template-columns:1fr;gap:4px;margin-top:12px}.arch-arr{transform:rotate(90deg);min-height:18px}.arch-box{padding:11px;gap:6px}.arch-box h3{font-size:14px}.arch-label,.arch-piece,.arch-piece small{font-size:10px}.arch-piece{padding:6px}.arch-decisions{grid-template-columns:1fr;gap:5px}.arch-decisions>div{padding:7px}.slide[data-slide="3"]{overflow:auto}}
+
 </style>
 </head>
 <body>
@@ -100,13 +116,16 @@ button:hover{background:#245166}button:disabled{opacity:.36;cursor:not-allowed}
 <div class="panel orange"><span class="smallcaps">03 / ENERGY</span><h3 style="margin-top:13px">Energy Monitoring</h3><p class="mini">Daily metering</p><div class="big" style="margin:24px 0 4px">270</div><p class="mini">meter records</p><hr><p class="smallcaps">Natural grain</p><p>Factory · date</p><span class="tag">How much energy was used?</span></div>
 </div><div class="darkstrip">BUSINESS NEED · Compare plan vs actual, production quality and energy efficiency — by factory and day.</div><div class="foot"><span>Synthetic portfolio demo · No company data</span><span>02 / 09</span></div>
 </section>
-<section class="slide" data-slide="3"><div class="eyebrow">GLASSOPS 360 / END-TO-END FLOW</div><h2>Validation-first architecture</h2><p class="subtitle">Source contracts are checked before extracts are loaded, modeled and exposed to BI.</p>
-<div class="flex content" style="align-items:stretch;gap:9px">
-<div class="step"><div class="smallcaps">01 / INGEST</div><h3 class="stepname">Source extracts</h3><div class="item">🔵 SAP ERP</div><div class="item">🟢 MES</div><div class="item">🟠 Energy</div></div><div class="arrow">→</div>
-<div class="step"><div class="smallcaps">02 / VERIFY</div><h3 class="stepname">Contract & quality gate</h3><div class="item">✓ Required schema</div><div class="item">✓ Keys & duplicates</div><div class="item">✓ Values & dates</div><div class="item">✓ Reference checks</div></div><div class="arrow">→</div>
-<div class="step" style="flex:1.6;background:#edf4fb"><div class="smallcaps">03 / LOAD & MODEL</div><h3 class="stepname">DuckDB Warehouse</h3><div class="tag" style="display:block;margin:8px 0">RAW tables</div><div class="grid2" style="gap:8px"><div class="tag">FACT tables</div><div class="tag">DIMENSIONS</div></div><p class="mini">SQL transforms · fact-level aggregation</p></div><div class="arrow">→</div>
-<div class="step"><div class="smallcaps">04 / SERVE</div><h3 class="stepname">Data Mart</h3><div class="item"><b>factory + day</b></div><div class="arrow center">↓</div><div class="tag" style="display:block;text-align:center;background:#def6f2">DASHBOARD<br>Business KPIs</div></div>
-</div><div class="flowbottom"><div class="tag success">✓ PASS → Load / refresh curated warehouse</div><div class="tag fail">× FAIL → Block refresh, retain last trusted KPIs</div></div><div class="foot"><span>Synthetic portfolio demo · No company data</span><span>03 / 09</span></div>
+<section class="slide" data-slide="3">
+<div class="eyebrow">GLASSOPS 360 / END-TO-END FLOW</div>
+<h2>Validation-first architecture</h2>
+<p class="subtitle">Three operational data sources → source contracts → warehouse modeling → a single trusted dashboard.</p>
+<div class="arch-flow"><div class="arch-box source"><div class="arch-label">01 / SOURCES</div><h3>Operational systems</h3><div class="arch-piece"><b>SAP ERP</b><small>Production plan</small></div><div class="arch-piece"><b>MES</b><small>Actual output &amp; scrap</small></div><div class="arch-piece"><b>Energy</b><small>Daily consumption</small></div></div><div class="arch-arr" aria-hidden="true">➜</div><div class="arch-box quality"><div class="arch-label">02 / VALIDATE</div><h3>Source Contract<br>&amp; Quality Gate</h3><div class="arch-piece">✓ Required columns</div><div class="arch-piece">✓ Keys &amp; duplicates</div><div class="arch-piece">✓ Values &amp; dates</div><div class="arch-piece">✓ Reference checks</div></div><div class="arch-arr" aria-hidden="true">➜</div><div class="arch-box warehouse"><div class="arch-label">03 / WAREHOUSE</div><h3>DuckDB<br>Data Warehouse</h3><div class="arch-piece"><b>RAW Layer</b><small>Validated source extracts</small></div><div class="arch-vertical">↓ SQL transformations ↓</div><div class="arch-model"><div class="arch-piece"><b>FACT Tables</b><small>Plan · production · energy</small></div><div class="arch-piece"><b>DIMENSIONS</b><small>Factory · product · date · line</small></div></div></div><div class="arch-arr" aria-hidden="true">➜</div><div class="arch-box mart"><div class="arch-label">04 / REPORT</div><h3>Data Mart</h3><div class="arch-piece"><b>mart_factory_daily</b><small>Factory + day grain</small></div><div class="arch-piece"><b>Aggregated facts</b><small>Consistent reporting</small></div></div><div class="arch-arr" aria-hidden="true">➜</div><div class="arch-box dashboard"><div class="arch-label">05 / CONSUME</div><h3>Executive<br>Dashboard</h3><div class="arch-piece">✓ Plan vs actual</div><div class="arch-piece">✓ Yield &amp; scrap</div><div class="arch-piece">✓ Energy intensity</div></div></div>
+<div class="arch-decisions">
+<div class="arch-pass"><b>✓ PASS</b> — warehouse refresh allowed</div>
+<div class="arch-block"><b>✕ BLOCK</b> — reject refresh, preserve trusted KPIs</div>
+</div>
+<div class="foot"><span>Synthetic portfolio demo · No company data</span><span>03 / 09</span></div>
 </section>
 <section class="slide" data-slide="4"><div class="eyebrow">GLASSOPS 360 / WAREHOUSE MODEL</div><h2>Model facts at the right grain</h2><p class="subtitle">Keep each measure at its natural detail level; aggregate before combining systems.</p>
 <div class="grid3 content">
