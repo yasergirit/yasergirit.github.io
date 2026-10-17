@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GlassOps 360 — Manufacturing Data Integration & BI. Nine-slide interview case study.">
+<title>GlassOps 360 | Presentation</title>
+<style>
+:root{--navy:#0b2434;--deep:#071c29;--teal:#10aaa5;--blue:#3d7bea;--orange:#ed9c24;--red:#de5d65;--ink:#193549;--muted:#607987;--line:#dce7ed;--bg:#f3f7f9;--green:#158b68}
+*{box-sizing:border-box}
+body{margin:0;background:#081b29;color:#f4f8fa;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+a{color:inherit}
+nav{display:flex;justify-content:space-between;align-items:center;padding:15px clamp(16px,4vw,48px);max-width:1550px;margin:auto;gap:16px}
+nav .brand{font-weight:800;letter-spacing:.06em;color:#fff;text-decoration:none}
+nav .brand b{color:var(--teal)}
+nav .home{color:#d4e3eb;text-decoration:none;font-size:13px;border:1px solid #3a5363;border-radius:7px;padding:9px 12px}
+main{max-width:1450px;margin:auto;padding:0 clamp(10px,3vw,36px)}
+.frame{aspect-ratio:16/9;position:relative;background:white;color:var(--ink);box-shadow:0 20px 55px #0006;overflow:hidden;border-radius:5px}
+.slide{display:none;position:absolute;inset:0;padding:4.4% 5.4% 3.3%;overflow:auto;background:#f8fafb}
+.slide.active{display:flex;flex-direction:column}
+.slide:not(.cover):before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:linear-gradient(90deg,var(--teal) 0 75%,var(--navy) 75%)}
+.eyebrow{font-size:clamp(9px,.82vw,13px);font-weight:850;color:var(--teal);letter-spacing:.19em}
+h1{font-size:clamp(24px,3.05vw,47px);line-height:1.1;letter-spacing:-.025em;margin:12px 0 12px}
+h2{font-size:clamp(21px,2.55vw,40px);line-height:1.12;letter-spacing:-.02em;margin:12px 0}
+h3{font-size:clamp(13px,1.25vw,19px);margin:0 0 7px;color:var(--ink)}
+p{margin:4px 0 12px}
+.subtitle{font-size:clamp(12px,1.1vw,17px);color:var(--muted);line-height:1.5;max-width:900px}
+.flex{display:flex;gap:14px;align-items:stretch}.grow{flex:1}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.panel{background:white;border:1px solid var(--line);border-radius:9px;padding:20px;box-shadow:0 4px 15px #0b243409}
+.panel.small{padding:14px}
+.panel.blue{border-top:5px solid var(--blue)}.panel.teal{border-top:5px solid var(--teal)}.panel.orange{border-top:5px solid var(--orange)}
+.panel.red{border-top:5px solid var(--red)}
+.content{margin-top:23px;flex:1}
+.big{font-size:clamp(20px,2.8vw,45px);font-weight:850;letter-spacing:-.03em;line-height:1.12}
+.mini{font-size:clamp(10px,.88vw,14px);line-height:1.5;color:var(--muted)}
+.smallcaps{font-weight:800;font-size:clamp(9px,.8vw,12px);text-transform:uppercase;letter-spacing:.14em;color:var(--blue)}
+.tag{border-radius:5px;padding:7px 10px;background:#eaf2f8;color:#325569;font-size:clamp(10px,.85vw,13px);display:inline-block;font-weight:700}
+.tag.success{background:#e4f7ee;color:var(--green)}.tag.fail{background:#ffedf0;color:#c34850}.tag.warn{background:#fff2d9;color:#a2670c}
+.foot{margin-top:auto;padding-top:13px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#8aa0ad;text-transform:uppercase;font-size:clamp(8px,.7vw,10px);letter-spacing:.06em}
+.bar{background:#e8eff4;height:12px;border-radius:6px;overflow:hidden;flex:1}
+.bar span{display:block;height:100%;background:var(--blue);border-radius:6px}
+.step{padding:14px 10px;background:white;border:1px solid var(--line);border-radius:8px;flex:1;min-width:0}
+.step .stepname{font-size:clamp(11px,1.04vw,16px);font-weight:800;margin-bottom:8px}
+.step .item{font-size:clamp(9px,.8vw,13px);margin:8px 0;color:#466374}
+.arrow{align-self:center;font-size:clamp(16px,2vw,27px);font-weight:bold;color:var(--teal)}
+.darkstrip{padding:14px 18px;background:var(--navy);color:white;border-radius:6px;font-size:clamp(11px,.9vw,15px);font-weight:650}
+.kpi{background:white;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:7px;padding:14px;min-width:0}
+.kpi:nth-child(2){border-top-color:var(--teal)}.kpi:nth-child(3){border-top-color:var(--green)}.kpi:nth-child(4){border-top-color:var(--red)}.kpi:nth-child(5){border-top-color:var(--orange)}
+.kpi .n{font-size:clamp(18px,2.05vw,33px);font-weight:850;letter-spacing:-.03em}
+.kpi .l{font-size:clamp(9px,.72vw,11px);font-weight:800;letter-spacing:.08em;color:#6d7f8b}
+.flowbottom{margin-top:17px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #e9eff3;font-size:clamp(10px,.95vw,14px)}
+.row:last-child{border-bottom:0}
+.bullet{display:inline-flex;align-items:center;justify-content:center;background:#e6f1ff;color:#2d6edf;width:23px;height:23px;min-width:23px;border-radius:100%;font-weight:800}
+.level{display:flex;align-items:center;gap:8px;margin-top:10px}.level span{font-size:clamp(9px,.9vw,13px);min-width:48px;color:#536c7a;font-weight:800}
+.check{color:var(--green);font-weight:900}
+.compare{display:grid;grid-template-columns:1fr .78fr 1fr;gap:20px;align-items:center;margin-top:12px}
+.compare .panel{min-height:230px}
+.center{text-align:center}
+.matcols{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;margin-top:15px}
+.matrix{border:1px solid var(--line);border-radius:8px;background:white;padding:15px;min-width:0}
+.matrixheader{display:flex;justify-content:space-between;font-size:clamp(11px,1vw,15px);font-weight:850;border-bottom:2px solid var(--navy);padding-bottom:10px;margin-bottom:7px}
+.matrix .itemrow{display:grid;grid-template-columns:21px .88fr 1.3fr;gap:5px;align-items:center;font-size:clamp(9px,.78vw,12px);padding:7px 0;border-bottom:1px solid #edf1f3;line-height:1.25}
+.matrix .itemrow:last-child{border-bottom:0}
+.matrix .itemrow .descr{color:#55717f}
+.cover{background:linear-gradient(120deg,#071c29,#0d3141 83%);color:white;justify-content:center}
+.cover .eyebrow{color:#30c8bd}
+.cover h1{font-size:clamp(38px,5vw,84px);letter-spacing:-.055em;line-height:.93;margin:25px 0}
+.cover h1 span{display:block;color:#12b5ac}
+.cover .subtitle{color:#c2d5df;font-size:clamp(15px,1.56vw,25px)}
+.cover .tag{background:#173849;color:#d9eff0}
+.coverflow{display:flex;align-items:center;gap:16px;justify-content:center}
+.coverflow .step{background:#123548;border:1px solid #23536a;color:white;max-width:260px}
+.coverflow .stepname{color:white}.coverflow .item{color:#a9cad7}
+.controls{max-width:1450px;margin:0 auto;padding:16px clamp(10px,3vw,36px) 28px;display:flex;justify-content:center;align-items:center;gap:17px}
+button{font:inherit;color:#e7f5f8;background:#18384a;border:1px solid #3b5d6d;border-radius:7px;padding:10px 17px;cursor:pointer}
+button:hover{background:#245166}button:disabled{opacity:.36;cursor:not-allowed}
+#counter{color:#c5d7df;font-size:14px;min-width:65px;text-align:center}
+.hint{color:#8caab9;font-size:12px}
+@media(max-width:900px){.frame{aspect-ratio:auto;min-height:700px}.slide{padding:26px;position:absolute}.grid5{grid-template-columns:repeat(3,1fr)}.matcols{grid-template-columns:1fr}.matrix .itemrow{font-size:11px}.compare{gap:8px}.step{padding:10px}.foot{font-size:9px}}
+@media(max-width:550px){.frame{min-height:830px}.grid3,.grid2{grid-template-columns:1fr}.grid5{grid-template-columns:repeat(2,1fr)}.content{margin-top:14px}.slide{padding:23px}.step .item{font-size:10px}.flex{gap:6px}.arrow{font-size:12px}.compare{grid-template-columns:1fr}.compare .panel{min-height:0}.subtitle{font-size:13px}.matrix .itemrow{font-size:10px}.hint{display:none}}
+</style>
+</head>
+<body>
+<nav><a class="brand" href="index.html">GLASSOPS <b>360</b></a><a class="home" href="index.html">← Back to dashboard</a></nav>
+<main>
+<div class="frame" id="deck" aria-label="GlassOps 360 presentation">
+<section class="slide cover active" data-slide="1">
+<div class="eyebrow">INDEPENDENT DATA SOLUTIONS CASE STUDY</div>
+<div class="flex" style="align-items:center;gap:7%;margin-top:5%">
+ <div class="grow"><h1>GLASSOPS<span>360</span></h1><p class="subtitle">From fragmented factory data to trustworthy operational KPIs.</p><div style="margin-top:28px;display:flex;gap:9px;flex-wrap:wrap"><span class="tag">3 SOURCES</span><span class="tag">1 WAREHOUSE</span><span class="tag">1 DECISION VIEW</span></div></div>
+ <div class="grow"><div class="coverflow"><div class="step"><div class="stepname">SAP ERP</div><div class="item">Production plan</div><hr style="border:0;border-top:1px solid #29576e"><div class="stepname">MES</div><div class="item">Good output & scrap</div><hr style="border:0;border-top:1px solid #29576e"><div class="stepname">ENERGY</div><div class="item">Meter data</div></div><div style="font-size:38px;color:#11b7ad">→</div><div class="step center"><div style="font-size:48px;color:#2fd3bd">✓</div><div class="stepname">VALIDATE</div><div style="font-size:40px;color:#88c5d8">▥</div><div class="stepname">DECIDE</div></div></div></div>
+</div>
+<div style="margin-top:36px;color:#93b9c6;font-size:13px">Manufacturing Analytics · Python / DuckDB / Streamlit</div>
+</section>
+<section class="slide" data-slide="2"><div class="eyebrow">GLASSOPS 360 / DATA SOURCES</div><h2>Three operational sources. One business question.</h2><p class="subtitle">Independent synthetic extracts with different fields and levels of detail.</p>
+<div class="grid3 content">
+<div class="panel blue"><span class="smallcaps">01 / PLAN</span><h3 style="margin-top:13px">SAP ERP</h3><p class="mini">Production planning</p><div class="big" style="margin:24px 0 4px">540</div><p class="mini">plan records</p><hr><p class="smallcaps">Natural grain</p><p>Factory · date · line · product</p><span class="tag">What should we produce?</span></div>
+<div class="panel teal"><span class="smallcaps">02 / ACTUAL</span><h3 style="margin-top:13px">MES</h3><p class="mini">Shop-floor execution</p><div class="big" style="margin:24px 0 4px">1,080</div><p class="mini">shift records</p><hr><p class="smallcaps">Natural grain</p><p>Factory · date · line · product · shift</p><span class="tag">What did we produce?</span></div>
+<div class="panel orange"><span class="smallcaps">03 / ENERGY</span><h3 style="margin-top:13px">Energy Monitoring</h3><p class="mini">Daily metering</p><div class="big" style="margin:24px 0 4px">270</div><p class="mini">meter records</p><hr><p class="smallcaps">Natural grain</p><p>Factory · date</p><span class="tag">How much energy was used?</span></div>
+</div><div class="darkstrip">BUSINESS NEED · Compare plan vs actual, production quality and energy efficiency — by factory and day.</div><div class="foot"><span>Synthetic portfolio demo · No company data</span><span>02 / 09</span></div>
+</section>
+<section class="slide" data-slide="3"><div class="eyebrow">GLASSOPS 360 / END-TO-END FLOW</div><h2>Validation-first architecture</h2><p class="subtitle">Source contracts are checked before extracts are loaded, modeled and exposed to BI.</p>
+<div class="flex content" style="align-items:stretch;gap:9px">
+<div class="step"><div class="smallcaps">01 / INGEST</div><h3 class="stepname">Source extracts</h3><div class="item">🔵 SAP ERP</div><div class="item">🟢 MES</div><div class="item">🟠 Energy</div></div><div class="arrow">→</div>
+<div class="step"><div class="smallcaps">02 / VERIFY</div><h3 class="stepname">Contract & quality gate</h3><div class="item">✓ Required schema</div><div class="item">✓ Keys & duplicates</div><div class="item">✓ Values & dates</div><div class="item">✓ Reference checks</div></div><div class="arrow">→</div>
+<div class="step" style="flex:1.6;background:#edf4fb"><div class="smallcaps">03 / LOAD & MODEL</div><h3 class="stepname">DuckDB Warehouse</h3><div class="tag" style="display:block;margin:8px 0">RAW tables</div><div class="grid2" style="gap:8px"><div class="tag">FACT tables</div><div class="tag">DIMENSIONS</div></div><p class="mini">SQL transforms · fact-level aggregation</p></div><div class="arrow">→</div>
+<div class="step"><div class="smallcaps">04 / SERVE</div><h3 class="stepname">Data Mart</h3><div class="item"><b>factory + day</b></div><div class="arrow center">↓</div><div class="tag" style="display:block;text-align:center;background:#def6f2">DASHBOARD<br>Business KPIs</div></div>
+</div><div class="flowbottom"><div class="tag success">✓ PASS → Load / refresh curated warehouse</div><div class="tag fail">× FAIL → Block refresh, retain last trusted KPIs</div></div><div class="foot"><span>Synthetic portfolio demo · No company data</span><span>03 / 09</span></div>
+</section>
+<section class="slide" data-slide="4"><div class="eyebrow">GLASSOPS 360 / WAREHOUSE MODEL</div><h2>Model facts at the right grain</h2><p class="subtitle">Keep each measure at its natural detail level; aggregate before combining systems.</p>
+<div class="grid3 content">
+<div class="panel blue"><span class="smallcaps">SAP</span><h3>fact_production_plan</h3><p class="mini">Factory · date · line · product</p><span class="tag">planned_tons</span></div>
+<div class="panel teal"><span class="smallcaps">MES</span><h3>fact_production</h3><p class="mini">Factory · date · line · product · shift</p><span class="tag">good_tons + scrap_tons</span></div>
+<div class="panel orange"><span class="smallcaps">ENERGY</span><h3>fact_energy_consumption</h3><p class="mini">Factory · date</p><span class="tag">energy_gj</span></div>
+</div><p class="smallcaps" style="margin:20px 0 9px">Shared dimensions</p><div class="flex" style="flex-wrap:wrap"><span class="tag">dim_factory</span><span class="tag">dim_product</span><span class="tag">dim_production_line</span><span class="tag">dim_date</span></div>
+<div class="darkstrip center" style="margin:24px 0 12px">AGGREGATE FACTS INDEPENDENTLY → FACTORY + DAY → mart_factory_daily</div><p class="mini"><b>Why it matters:</b> A direct join from daily energy to shift-level MES rows multiplies energy totals. Aggregation first prevents double counting.</p><div class="foot"><span>Synthetic portfolio demo · No company data</span><span>04 / 09</span></div>
+</section>
+<section class="slide" data-slide="5"><div class="eyebrow">GLASSOPS 360 / BUSINESS OUTPUT</div><h2>Executive KPIs on a trusted reporting layer</h2><p class="subtitle">One consistent factory-day view — 90-day synthetic sample, all three factories.</p>
+<div class="grid5 content" style="flex:0"><div class="kpi"><div class="n">31,540 t</div><div class="l">GOOD PRODUCTION</div></div><div class="kpi"><div class="n">88.4%</div><div class="l">TARGET ACHIEVEMENT</div></div><div class="kpi"><div class="n">94.1%</div><div class="l">PRODUCTION YIELD</div></div><div class="kpi"><div class="n">5.9%</div><div class="l">SCRAP RATE</div></div><div class="kpi"><div class="n">6.02 GJ/t</div><div class="l">ENERGY INTENSITY</div></div></div>
+<div class="grid2 content"><div class="panel"><h3>Production plan vs good output</h3><div class="mini">Plan (blue) · Good output (teal)</div><div style="margin-top:24px"><div class="level"><span>TR01</span><div class="bar"><span style="width:100%"></span></div><div class="bar"><span style="width:90%;background:#10aaa5"></span></div></div><div class="level"><span>TR02</span><div class="bar"><span style="width:100%"></span></div><div class="bar"><span style="width:86%;background:#10aaa5"></span></div></div><div class="level"><span>TR03</span><div class="bar"><span style="width:100%"></span></div><div class="bar"><span style="width:89%;background:#10aaa5"></span></div></div></div></div>
+<div class="panel"><h3>What each metric answers</h3><div class="row"><span class="bullet">1</span><span><b>Target:</b> Good / planned — are we meeting the plan?</span></div><div class="row"><span class="bullet">2</span><span><b>Quality:</b> Good & scrap / gross — what portion is usable?</span></div><div class="row"><span class="bullet">3</span><span><b>Energy:</b> GJ / gross ton — how energy-intensive is output?</span></div><p class="mini" style="margin-top:12px">Ratios use aggregated totals, never averaged daily percentages.</p></div></div><div class="foot"><span>Synthetic portfolio demo · No company data</span><span>05 / 09</span></div>
+</section>
+<section class="slide" data-slide="6"><div class="eyebrow">GLASSOPS 360 / QUALITY GATE</div><h2>Data quality: verify or block</h2><p class="subtitle">Source contracts prevent invalid records from silently contaminating business KPIs.</p>
+<div class="grid2 content" style="grid-template-columns:1.1fr 1fr">
+<div class="panel blue"><p class="smallcaps">Contract rules</p><h3>What must the source guarantee?</h3><div class="row"><span class="bullet">✓</span>Required columns — expected schema</div><div class="row"><span class="bullet">✓</span>Business keys — non-null and unique</div><div class="row"><span class="bullet">✓</span>Value checks — valid dates and non-negative numbers</div><div class="row"><span class="bullet">✓</span>References — known factories and products</div></div>
+<div style="display:flex;flex-direction:column;gap:14px"><div class="panel teal"><div class="smallcaps">Clean input</div><div class="big" style="color:var(--green);margin-top:12px">20 / 20</div><p class="mini">Checks PASS — eligible for warehouse refresh</p></div><div class="panel red"><div class="smallcaps" style="color:var(--red)">Injected issues</div><div class="big" style="color:var(--red);margin-top:12px">4 FAIL</div><p class="mini">5 flagged rows · null plant · duplicate key · negative quantity · unknown SKU</p><span class="tag fail">Block refresh; keep trusted dashboard</span></div></div>
+</div><div class="darkstrip" style="margin-top:18px">DEMO DETAIL · Injected errors live only in memory. The actual build rejects failing sources before warehouse writes.</div><div class="foot"><span>Synthetic portfolio demo · No company data</span><span>06 / 09</span></div>
+</section>
+<section class="slide" data-slide="7"><div class="eyebrow">GLASSOPS 360 / ERP CHANGE ASSESSMENT</div><h2>SAP upgrade: detect, normalize, reconcile</h2><p class="subtitle">A schema rename and kg-to-ton change should not change business totals.</p>
+<div class="compare content" style="flex:0"><div class="panel blue"><p class="smallcaps">Before / SAP v1</p><h3>material_code</h3><h3>planned_qty_kg</h3><p class="tag">150,000 kg</p></div><div class="panel center" style="background:var(--navy);color:white"><div class="smallcaps" style="color:#52d1cb">Canonical adapter</div><h3 style="color:white;margin-top:14px">Rename fields<br>+ align units</h3><div style="font-size:35px;color:#45c9c4">→</div></div><div class="panel orange"><p class="smallcaps">After / SAP v2</p><h3>sku_id</h3><h3>planned_qty_tons</h3><p class="tag">150 tons</p></div></div>
+<div class="panel" style="background:#e7f6ee;margin-top:19px"><span class="smallcaps">Normalization regression</span><div style="display:flex;justify-content:space-around;align-items:center;gap:20px;margin-top:10px"><div><span class="big">540</span><span class="mini"> business keys</span></div><div><span class="big">0</span><span class="mini"> mismatches</span></div><span class="tag success">PASS</span></div></div>
+<p class="mini" style="margin-top:15px"><b>Impact path:</b> Source → Contract → Mapping → Fact → Data Mart → KPI</p><div class="foot"><span>Synthetic portfolio demo · No company data</span><span>07 / 09</span></div>
+</section>
+<section class="slide" data-slide="8"><div class="eyebrow">GLASSOPS 360 / VALIDATION & HANDOFF</div><h2>UAT connects requirements to evidence</h2><p class="subtitle">Five automated checks demonstrate analytical acceptance; formal business sign-off is a separate step.</p>
+<div class="grid2 content" style="grid-template-columns:1.6fr 1fr"><div class="panel"><p class="smallcaps">Automated acceptance checks</p><div class="row"><span class="bullet">01</span><span class="grow">Plan vs good output matches source extracts</span><span class="tag success">PASS</span></div><div class="row"><span class="bullet">02</span><span class="grow">Good + scrap reconciles to gross production</span><span class="tag success">PASS</span></div><div class="row"><span class="bullet">03</span><span class="grow">Energy total is not multiplied by joins</span><span class="tag success">PASS</span></div><div class="row"><span class="bullet">04</span><span class="grow">Defective inputs trigger quality failures</span><span class="tag success">PASS</span></div><div class="row"><span class="bullet">05</span><span class="grow">SAP v1/v2 planning values agree</span><span class="tag success">PASS</span></div></div>
+<div class="panel teal"><p class="smallcaps">Outcome</p><div class="big" style="font-size:clamp(33px,4.5vw,72px);color:var(--teal);margin:24px 0 4px">5 / 5</div><p>Automated checks passing</p><div class="row"><span class="check">✓</span>Valid inputs</div><div class="row"><span class="check">✓</span>Stable source changes</div><div class="row"><span class="check">✓</span>Trusted analytical outputs</div><p class="mini" style="margin-top:15px">Formal business-owner sign-off is out of scope for this PoC.</p></div></div><div class="foot"><span>Synthetic portfolio demo · No company data</span><span>08 / 09</span></div>
+</section>
+<section class="slide" data-slide="9"><div class="eyebrow">GLASSOPS 360 / ROLE FIT / CONCLUSION</div><h2>From job requirements to working evidence</h2><p class="subtitle">A direct crosswalk between the role and the GlassOps 360 deliverables.</p>
+<div class="matcols content">
+<div class="matrix"><div class="matrixheader"><span>ROLE RESPONSIBILITIES</span><span class="tag">9 AREAS</span></div>
+<div class="itemrow"><span class="check">✓</span><b>Business requirements</b><span class="descr">KPIs, BRD & source mapping</span></div>
+<div class="itemrow"><span class="check">✓</span><b>Warehouse & BI</b><span class="descr">RAW → facts/dims → mart → dashboard</span></div>
+<div class="itemrow"><span class="check">✓</span><b>Data quality</b><span class="descr">20 checks, record drill-down, PASS/BLOCK</span></div>
+<div class="itemrow"><span style="color:#c5841b">~</span><b>UAT & data testing</b><span class="descr">5 checks; formal sign-off external</span></div>
+<div class="itemrow"><span style="color:#c5841b">~</span><b>Integration & ETL</b><span class="descr">Python/SQL flows; source mapping</span></div>
+<div class="itemrow"><span class="check">✓</span><b>SAP change analysis</b><span class="descr">Schema and unit regression</span></div>
+<div class="itemrow"><span class="check">✓</span><b>Process improvements</b><span class="descr">Grain-safe joins; controlled refresh</span></div>
+<div class="itemrow"><span style="color:#c5841b">~</span><b>Project coordination</b><span class="descr">Scope and traceability; no live team</span></div>
+<div class="itemrow"><span class="check">✓</span><b>User support</b><span class="descr">Lineage, docs, diagnostic drill-down</span></div></div>
+<div class="matrix"><div class="matrixheader"><span>ALL ABOUT YOU / PROFILE</span><span class="tag">8 CRITERIA</span></div>
+<div class="itemrow"><span>·</span><b>Engineering degree</b><span class="descr">BSc Chemical Engineering (CV)</span></div>
+<div class="itemrow"><span>·</span><b>5+ years experience</b><span class="descr">Professional tenure: CV / interview</span></div>
+<div class="itemrow"><span class="check">✓</span><b>SQL & BI tools</b><span class="descr">SQL, Streamlit; Power BI background</span></div>
+<div class="itemrow"><span class="check">✓</span><b>Modeling & ETL</b><span class="descr">Facts/dimensions; SQL transformations</span></div>
+<div class="itemrow"><span style="color:#c5841b">~</span><b>Privacy & access</b><span class="descr">Role matrix, not enforcement</span></div>
+<div class="itemrow"><span class="check">✓</span><b>Problem-solving</b><span class="descr">Join fanout, DQ & regressions</span></div>
+<div class="itemrow"><span style="color:#c5841b">~</span><b>Cross-team skills</b><span class="descr">Handoff docs; not team-tested</span></div>
+<div class="itemrow"><span style="color:#c5841b">~</span><b>English</b><span class="descr">English demo; assessed in interview</span></div></div>
+</div><div class="darkstrip" style="margin-top:12px"><span style="color:#4fe3b1">✓</span> BUILT & TESTED &nbsp;&nbsp; <span style="color:#ffe1a7">~</span> SCOPED / SIMULATED &nbsp;&nbsp; · CV / INTERVIEW <span style="float:right;color:#8cf2e0">SOURCE → CONTRACT → WAREHOUSE → MART → KPI</span></div><div class="foot"><span>Independent portfolio demo · Synthetic data only</span><span>09 / 09</span></div>
+</section>
+</div>
+</main>
+<div class="controls"><button id="prev" aria-label="Previous slide">← Previous</button><span id="counter" aria-live="polite">1 / 9</span><button id="next" aria-label="Next slide">Next →</button><button id="full" title="Fullscreen">⛶</button><span class="hint">← → arrow keys to navigate</span></div>
+<script>
+(function(){
+ var slides=Array.from(document.querySelectorAll(".slide")), current=0;
+ var prev=document.getElementById("prev"),next=document.getElementById("next"),counter=document.getElementById("counter");
+ function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach(function(s,i){s.classList.toggle("active",i===current)});counter.textContent=(current+1)+" / "+slides.length;prev.disabled=current===0;next.disabled=current===slides.length-1;history.replaceState(null,"","#slide-"+(current+1));}
+ prev.addEventListener("click",function(){show(current-1)});
+ next.addEventListener("click",function(){show(current+1)});
+ document.getElementById("full").addEventListener("click",function(){var e=document.getElementById("deck");if(!document.fullscreenElement&&e.requestFullscreen){e.requestFullscreen()}else if(document.exitFullscreen){document.exitFullscreen()}});
+ document.addEventListener("keydown",function(e){if(["ArrowRight","PageDown"," "].includes(e.key)){e.preventDefault();show(current+1)}if(["ArrowLeft","PageUp"].includes(e.key)){e.preventDefault();show(current-1)}});
+ var idx=Number((location.hash.match(/slide-(\d+)/)||[])[1]||1)-1;show(idx);
+})();
+</script>
+</body>
+</html>
